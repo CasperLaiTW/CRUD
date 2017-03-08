@@ -24,7 +24,7 @@ trait AjaxTable
     {
         $this->crud->hasAccessOrFail('list');
 
-        $this->input = Input::all();
+        $this->input = $_POST;
         $this->totalRows = $this->filteredRows = $this->crud->getEntries()->count();
 
         $data = $this->crud->getEntriesWithConditions(
