@@ -129,7 +129,7 @@ trait Read
     private function getColumnQuery($column)
     {
         if (isset($column['type']) && $column['type'] == 'model_function') {
-            return null;
+            return;
         }
 
         if (is_array($column)) {
@@ -268,21 +268,25 @@ trait Read
     /**
      * Get the HTML of a cell, using the column types.
      * @param  array $column
-     * @param  Entity $entry   A db entry of the current entity;
+     * @param  Entity $entry A db entry of the current entity;
      * @return HTML
      */
     public function getCellView($column, $entry)
     {
-        if (! isset($column['type'])) {
-            return \View::make('crud::columns.text')->with('crud', $this)->with('column', $column)->with('entry', $entry)->render();
+        if (!isset($column['type'])) {
+            return \View::make('crud::columns.text')->with('crud', $this)->with('column', $column)->with('entry',
+                $entry)->render();
         } else {
-            if (view()->exists('vendor.backpack.crud.columns.'.$column['type'])) {
-                return \View::make('vendor.backpack.crud.columns.'.$column['type'])->with('crud', $this)->with('column', $column)->with('entry', $entry)->render();
+            if (view()->exists('vendor.backpack.crud.columns.' . $column['type'])) {
+                return \View::make('vendor.backpack.crud.columns.' . $column['type'])->with('crud',
+                    $this)->with('column', $column)->with('entry', $entry)->render();
             } else {
-                if (view()->exists('crud::columns.'.$column['type'])) {
-                    return \View::make('crud::columns.'.$column['type'])->with('crud', $this)->with('column', $column)->with('entry', $entry)->render();
+                if (view()->exists('crud::columns.' . $column['type'])) {
+                    return \View::make('crud::columns.' . $column['type'])->with('crud', $this)->with('column',
+                        $column)->with('entry', $entry)->render();
                 } else {
-                    return \View::make('crud::columns.text')->with('crud', $this)->with('column', $column)->with('entry', $entry)->render();
+                    return \View::make('crud::columns.text')->with('crud', $this)->with('column',
+                        $column)->with('entry', $entry)->render();
                 }
             }
         }
