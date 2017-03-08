@@ -1,5 +1,5 @@
 {
-  "name": "backpack/crud",
+  "name": "indra1/crud",
   "description": "Quickly build an admin interface for your Eloquent models, using Laravel 5. Build a CMS in a matter of minutes.",
   "keywords": [
     "CRUD",
@@ -10,7 +10,7 @@
     "admin panel",
     "admin interface",
     "CMS",
-    "laravel",
+    "laravel"
   ],
   "homepage": "https://github.com/laravel-backpack/CRUD",
   "license": "MIT",
