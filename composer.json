@@ -10,7 +10,7 @@
     "admin panel",
     "admin interface",
     "CMS",
-    "laravel",
+    "laravel"
   ],
   "homepage": "https://github.com/laravel-backpack/CRUD",
   "license": "MIT",
@@ -49,7 +49,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0-dev"
+      "dev-master": "ajax-databales"
     }
   }
 }
