@@ -221,7 +221,7 @@ trait CrudTrait
      *
      * @return [type] [description]
      */
-    public function getCastedAttributes() : array
+    public function getCastedAttributes()
     {
         return parent::getCasts();
     }
